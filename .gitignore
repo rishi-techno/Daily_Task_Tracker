@@ -1,0 +1,20 @@
+# Node
+node_modules/
+
+# React build
+build/
+dist/
+
+# Environment
+.env
+
+# Java / Spring Boot
+target/
+.gradle/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store

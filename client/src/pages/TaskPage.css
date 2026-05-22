@@ -1,0 +1,127 @@
+/* AddTask / EditTask Shared Styles */
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-bottom: 24px;
+}
+
+.page-breadcrumb a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.page-breadcrumb span:not(:last-child) {
+  color: var(--gray-300);
+}
+
+.task-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+.task-page-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.task-page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.task-page-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-sm);
+  background: #eff6ff;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.edit-icon {
+  background: var(--medium-bg);
+  color: var(--medium);
+}
+
+.task-page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+}
+
+.task-page-header p {
+  font-size: 13px;
+  color: var(--gray-400);
+}
+
+/* Tips panel */
+.task-tips {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.task-tips h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 16px;
+}
+
+.task-tips ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-tips li {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.5;
+  padding-left: 12px;
+  border-left: 2px solid var(--gray-200);
+}
+
+.task-tips li strong {
+  color: var(--gray-700);
+  display: block;
+}
+
+/* tasks-loading used in EditTask too */
+.tasks-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 60px 0;
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .task-page-layout {
+    grid-template-columns: 1fr;
+  }
+  .task-tips { display: none; }
+}
