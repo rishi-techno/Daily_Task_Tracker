@@ -11,12 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-/**
- * AuthController - Handles user authentication endpoints
- *
- * POST /api/auth/register - Register a new user
- * POST /api/auth/login    - Login with existing credentials
- */
+ 
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "http://localhost:3000")
@@ -24,12 +19,7 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
-
-    /**
-     * Register a new user
-     * @param request - name, email, password
-     * @return JWT token and user details
-     */
+ 
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request) {
         try {
@@ -40,12 +30,7 @@ public class AuthController {
                     .body(Map.of("error", e.getMessage()));
         }
     }
-
-    /**
-     * Login with existing credentials
-     * @param request - email, password
-     * @return JWT token and user details
-     */
+ 
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
         try {
