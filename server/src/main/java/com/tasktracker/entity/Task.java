@@ -5,9 +5,7 @@ import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/**
- * Task Entity - Represents a task created by a user
- */
+ 
 @Entity
 @Table(name = "tasks")
 @Data
@@ -26,7 +24,7 @@ public class Task {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    // Priority: HIGH, MEDIUM, LOW
+     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Priority priority;
@@ -39,18 +37,15 @@ public class Task {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
-
-    // Many tasks belong to one user
+ 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    // Priority enum
+ 
     public enum Priority {
         HIGH, MEDIUM, LOW
     }
-
-    // Auto-set createdAt before persisting
+ 
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
