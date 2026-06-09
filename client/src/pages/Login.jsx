@@ -1,7 +1,4 @@
-// ============================================
-// Login.jsx - User login page
-// ============================================
-
+ 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login as loginAPI } from '../services/authService';
